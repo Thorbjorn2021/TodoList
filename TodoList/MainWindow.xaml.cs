@@ -20,5 +20,43 @@ namespace TodoList
         {
             InitializeComponent();
         }
+
+        private RadioButton getRadioButton()
+        {
+            RadioButton radioButton;
+            if (radioLow.IsChecked != null && radioLow.IsChecked != false)
+            {
+                radioButton = (RadioButton)radioLow;
+            } else if (radioMedium.IsChecked != null && radioMedium.IsChecked != false)
+            {
+                radioButton = (RadioButton)radioMedium;
+            }
+            else if (radioHigh.IsChecked != null && radioHigh.IsChecked != false)
+            {
+                radioButton = (RadioButton)radioHigh;
+            }
+            else
+            {
+                return null;
+            }
+
+            return radioButton;
+        }
+
+        private void BtnAddTodo_Click(object sender, RoutedEventArgs e)
+            //bool isValidCondition = 
+            
+        {
+            RadioButton radiobutton = getRadioButton(); 
+            listTodos.Items.Add($"Title: {txtTitle.Text}|Urgency: {radiobutton.Content.ToString()}|Todo: {txtTodo.Text}");
+            txtTitle.Clear();
+            txtTodo.Clear();
+            if(radiobutton.IsChecked == true)
+            {
+                radiobutton.IsChecked = false;
+            }
+        }
     }
+
+    
 }
