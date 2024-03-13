@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoList"
         mc:Ignorable="d"
-        Title="TodoList" Height="300" Width="600">
+        Title="TodoList" Height="350" Width="600"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <TabControl>
             <TabItem Header="Add To List" Margin="0,0,5,0">
@@ -16,22 +17,23 @@
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition Width="11*" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock FontWeight="Bold" Margin="5"  HorizontalAlignment="Center">Write Title</TextBlock>
-                    <TextBox x:Name="txtTitle" Margin="30" MaxLength="50" TextWrapping="Wrap"></TextBox>
-                    <StackPanel Grid.Column="1">
+                    <TextBlock FontWeight="Bold" Margin="65,5,0,5"  HorizontalAlignment="Left" Grid.Column="1">Write Title</TextBlock>
+                    <TextBox x:Name="txtTitle" Margin="30,30,30,30" MaxLength="50" TextWrapping="Wrap" Grid.ColumnSpan="2"></TextBox>
+                    <StackPanel Grid.Column="2" Margin="0,0,0,178" Grid.RowSpan="2">
                         <TextBlock FontWeight="Bold" Margin="5"  HorizontalAlignment="Center">Level of Urgency</TextBlock>
                         <RadioButton x:Name="radioLow" HorizontalAlignment="Center">Low</RadioButton>
                         <RadioButton x:Name="radioMedium" HorizontalAlignment="Center">Medium</RadioButton>
                         <RadioButton x:Name="radioHigh" HorizontalAlignment="Center">High</RadioButton>
                     </StackPanel>
 
-                    <TextBlock Grid.Row="1" FontWeight="Bold" Margin="5"  HorizontalAlignment="Center">Write Todo</TextBlock>
-                    <TextBox Grid.Row="1" x:Name="txtTodo" Margin="25"></TextBox>
+                    <TextBlock Grid.Row="1" FontWeight="Bold" Margin="63,5,0,5"  HorizontalAlignment="Left" Grid.Column="1">Write Todo</TextBlock>
+                    <TextBox Grid.Row="1" x:Name="txtTodo" Margin="25,25,25,25" Grid.ColumnSpan="2"></TextBox>
 
-                    <Button Grid.Row="1" Grid.Column="1" x:Name="btnAdd" Click="BtnAddTodo_Click" Margin="40,40,40,40" >Add Todo</Button>
+                    <Button Grid.Row="1" Grid.Column="2" x:Name="btnAdd" Click="BtnAddTodo_Click" Margin="75" >Add Todo</Button>
                 </Grid>
             </TabItem>
             <TabItem Header="View List">
