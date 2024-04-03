@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="TodoList" Height="350" Width="600"
         WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:TodoListDataContext/>
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate x:Key="TodoTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Title}" />
+                <TextBlock Text="{Binding Description}" />
+                <TextBlock Text="{Binding Priority}" />
+                <CheckBox Margin="5,0,5,0"
+                          />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <TabControl>
             <TabItem Header="Add To List" Margin="0,0,5,0">
@@ -25,9 +39,11 @@
                     <TextBox x:Name="txtTitle" Margin="30,30,30,30" MaxLength="50" TextWrapping="Wrap" Grid.ColumnSpan="2"></TextBox>
                     <StackPanel Grid.Column="2" Margin="0,0,0,178" Grid.RowSpan="2">
                         <TextBlock FontWeight="Bold" Margin="5"  HorizontalAlignment="Center">Level of Urgency</TextBlock>
-                        <RadioButton x:Name="radioLow" HorizontalAlignment="Center">Low</RadioButton>
-                        <RadioButton x:Name="radioMedium" HorizontalAlignment="Center">Medium</RadioButton>
-                        <RadioButton x:Name="radioHigh" HorizontalAlignment="Center">High</RadioButton>
+                        <ComboBox Name="myComboBox" >
+                            <ComboBoxItem Content="Low"></ComboBoxItem>
+                            <ComboBoxItem Content="Medium"></ComboBoxItem>
+                            <ComboBoxItem Content="High"></ComboBoxItem>
+                        </ComboBox>
                     </StackPanel>
 
                     <TextBlock Grid.Row="1" FontWeight="Bold" Margin="63,5,0,5"  HorizontalAlignment="Left" Grid.Column="1">Write Todo</TextBlock>
@@ -38,7 +54,22 @@
             </TabItem>
             <TabItem Header="View List">
                 <Grid Background="#FFE5E5E5">
-                    <ListBox x:Name="listTodos" Margin="25"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="277*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.ColumnSpan="2">
+                        <TextBlock></TextBlock>
+                        <ListBox Margin="25"
+                             ItemsSource="{Binding Todos}"
+                             ItemTemplate="{StaticResource TodoTemplate}"
+                             SelectedItem="{Binding SelectedTodo, Mode=TwoWay}"/>
+                        <Button Click="BtnRemoveTodo_Click"
+                                IsEnabled="{Binding IsRemoveTodoEnabled}">Remove Todo</Button>
+                        <Button Click="BtnSaveChanges_Click"
+                                IsEnabled="{Binding IsSaveChangesEnabled}">Save Changes</Button>
+                    </StackPanel>
+
                 </Grid>
             </TabItem>
         </TabControl>
