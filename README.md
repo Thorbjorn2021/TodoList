@@ -11,4 +11,8 @@ Microsoft Visual Studio comes with an integrated design editor that fasciliates 
 * Planning larger projects.
 * Task-driven-development.
 * XAML
-## Install
+## Run program
+
+### Prerequisites
+* [Visual studio 2022](https://visualstudio.microsoft.com/) (v17.10) or higher
+* [.Net 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) or higher
