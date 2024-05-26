@@ -10,4 +10,5 @@ Microsoft Visual Studio comes with an integrated design editor that fasciliates 
 * Modern Design Patterns.
 * Planning larger projects.
 * Task-driven-development.
+* XAML
 ## Install
