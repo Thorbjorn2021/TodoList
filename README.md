@@ -8,6 +8,6 @@ Microsoft Visual Studio comes with an integrated design editor that fasciliates 
 ## Learning Objectives
 * The Model-View-ViewModel (MVVM) architectural pattern.
 * Modern Design Patterns.
+* Planning larger projects.
 * Task-driven-development.
-* 
 ## Install
