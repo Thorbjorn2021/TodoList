@@ -16,6 +16,6 @@ Microsoft Visual Studio comes with an integrated design editor that fasciliates 
 ### Prerequisites
 * Compatible IDE such as [Visual studio 2022](https://visualstudio.microsoft.com/)
 * [.Net 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) or higher
-### Instructions
+### Instructions coming soon
 1. 
 2. 
