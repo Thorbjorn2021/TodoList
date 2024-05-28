@@ -31,17 +31,19 @@ namespace TodoList
             txtTitle.Clear();
             txtTodo.Clear();
             DC.AddTodo(todo);
+            DC.StoreTodos();
         }
 
         private void BtnRemoveTodo_Click(object sender, RoutedEventArgs e)
         {
             DC.RemoveTodo();
-        }
-
-        private void BtnSaveChanges_Click(object sender, RoutedEventArgs e)
-        {
             DC.StoreTodos();
         }
+
+        //private void BtnSaveChanges_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DC.StoreTodos();
+        //}
     }
 
 
