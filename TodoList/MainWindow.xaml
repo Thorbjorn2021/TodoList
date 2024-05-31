@@ -66,8 +66,8 @@
                              SelectedItem="{Binding SelectedTodo, Mode=TwoWay}"/>
                         <Button Click="BtnRemoveTodo_Click"
                                 IsEnabled="{Binding IsRemoveTodoEnabled}">Remove Todo</Button>
-                        <!--<Button Click="BtnSaveChanges_Click"
-                                IsEnabled="{Binding IsSaveChangesEnabled}">Save Changes</Button>-->
+                        <Button Click="BtnUndo_Click"
+                                IsEnabled="{Binding IsUndoEnabled}">Undo</Button>
                     </StackPanel>
 
                 </Grid>

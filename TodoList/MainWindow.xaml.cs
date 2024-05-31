@@ -40,10 +40,11 @@ namespace TodoList
             DC.StoreTodos();
         }
 
-        //private void BtnSaveChanges_Click(object sender, RoutedEventArgs e)
-        //{
-        //    DC.StoreTodos();
-        //}
+        private void BtnUndo_Click(object sender, RoutedEventArgs e)
+        {
+            DC.UndoTodo();
+            DC.StoreTodos();
+        }
     }
 
 
