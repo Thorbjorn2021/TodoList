@@ -8,5 +8,5 @@ This application comes with a Graphical User Interface (GUI). The GUI has a clea
 * Compatible IDE such as [Visual studio 2022](https://visualstudio.microsoft.com/)
 * [.Net 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) or higher
 ### Instructions coming soon
-1. 
-2. 
+1. Clone project
+2. Build & Run
